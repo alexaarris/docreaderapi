@@ -68,8 +68,8 @@ def makeYqlQuery(req):
 
 def makeWebhookResult(data, req):
     docpart = req.get("result").get("parameters").get("docpart")
-    if docpart.get("Value") == "summary"
-        speech = docpart.get("Value")
+    if docpart = "summary":
+        speech = "LOL"
     else:
         speech =  "Summary In September 2017, 2 product groups were above the benchmark unit sales of 1,000 units. W (2,328 units), which accounted for 61.78% of the product groups' unit sales, generated the highest unit sales and T (8 units), which accounted for 0.21% of the product groups' unit sales, generated the lowest unit sales."
 
