@@ -71,9 +71,9 @@ def makeWebhookResult(data, req):
     
     if docpart == 'summary':
         speech = "Summary In September 2017, 2 product groups were above the benchmark unit sales of 1,000 units. W (2,328 units), which accounted for 61.78% of the product groups' unit sales, generated the highest unit sales and T (8 units), which accounted for 0.21% of the product groups' unit sales, generated the lowest unit sales."
-    elif docpart == 'W Unit Sales':
+    elif docpart == 'part1':
         speech = "W's unit sales increased by 433 units (22.85%), from 1,895 units in September 2016 to 2,328 units in September 2017. Geographically. Fuvahmulah (251, 64.03%), MalÃ© (157, 28.04%), and Other (43, 7.66%) drove the increase in W's unit sales and Hithadhoo (-10, -3.33%) and Kulhudhuffushi (-8, -9.76%) offset the increase in W's unit sales."      
-    elif docpart == "D Unit Sales':
+    elif docpart == "part2':
         speech = "From September 2016 to September 2017, D's unit sales increased by 142 (13.28%) to 1,211. Other (98, 30.63%), MHL (71, 133.96%), and RFL (25, 15.63%) drove the increase in D's unit sales and DKL (-40, -8.68%) and DFD (-12, -16%) offset the increase in D's unit sales. Option 1. The 5 product types included in D are DKL, which has unit sales of 9,708, Other, which has unit sales of 6,577, RFL, which has unit sales of 2,071, MHL, which has unit sales of 1,694, and DFD, which has unit sales of 1,505. Option 2. In September 2017, D had a unit sales of 1,211. DKL (421), which accounted for 34.76% of the unit sales of the contributors to the product group's unit sales, Other (418), which accounted for 34.52%, and RFL (185), which accounted for 15.28%, were the largest contributors to the product group's unit sales and accounted for 84.56% of the unit sales of the contributors to its unit sales." 
     else:
         speech = "You have not selected a correct part of the report. Please try again"
