@@ -62,11 +62,11 @@ def processRequest(req):
 
 
 def makeYqlQuery(req):
-    city = req.get("result").get("parameters").get("summary")
-    #parameters = result.get("parameters")
-    #city = parameters.get("summary")
+    result = req.get("result")
+    parameters = result.get("parameters")
+    summary = parameters.get("summary")
 
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + summary + "')"
 
 
 def makeWebhookResult(data):
