@@ -57,7 +57,7 @@ def processRequest(req):
     yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
     result = urlopen(yql_url).read()
     data = json.loads(result)
-    res = makeWebhookResult(req)
+    res = makeWebhookResult(data)
     return res
 
 
@@ -69,23 +69,20 @@ def makeYqlQuery(req):
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
-def makeWebhookResult(req):
+def makeWebhookResult(data):
     result = req.get("result")
     parameters = result.get("parameters")
     city = parameters.get("docpart")
 
     
-    speech = city
-    #"Summary In September 2017, 2 product groups were above the benchmark unit sales of 1,000 units. W (2,328 units), which accounted for 61.78% of the product groups' unit sales, generated the highest unit sales and T (8 units), which accounted for 0.21% of the product groups' unit sales, generated the lowest unit sales."
+    speech = "Summary In September 2017, 2 product groups were above the benchmark unit sales of 1,000 units. W (2,328 units), which accounted for 61.78% of the product groups' unit sales, generated the highest unit sales and T (8 units), which accounted for 0.21% of the product groups' unit sales, generated the lowest unit sales."
 
     print("Summary:")
-    print(city)
+    print(speech)
 
     return {
-        "speech": city,
-        "displayText": city,
-        # "data": data,
-        # "contextOut": [],
+        "speech": speech,
+        "displayText": speech,
         "source": "apiai-weather-webhook-sample"
     }
 
