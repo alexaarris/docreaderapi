@@ -62,11 +62,8 @@ def processRequest(req):
 
 
 def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    summary = parameters.get("summary")
-
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + summary + "')"
+    docpart = req.get("result").get("parameters").get("docpart")
+    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + docpart + "')"
 
 
 def makeWebhookResult(data):
@@ -76,8 +73,8 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
+        "speech": docpart,
+        "displayText": docpart,
         # "data": data,
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
