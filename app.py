@@ -62,9 +62,9 @@ def processRequest(req):
 
 
 def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("summary")
+    city = req.get("result").get("parameters").get("summary")
+    #parameters = result.get("parameters")
+    #city = parameters.get("summary")
 
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
