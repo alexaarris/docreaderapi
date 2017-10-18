@@ -67,7 +67,7 @@ def makeYqlQuery(req):
 
 
 def makeWebhookResult(data, req):
-    docpart = req.get("result").get("parameters").get("docpart")
+    docpart = req.get("result").get("parameters").get("docpart").get("value")
     if docpart = "summary"
         speech = docpart
     else:
