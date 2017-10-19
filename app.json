@@ -1,7 +1,7 @@
 {
-  "name": "Alex Playground webhook",
-  "description": "Playground webhook",
-  "repository": "https://github.com/alexaarris/playground",
+  "name": "Doc Reader webhook",
+  "description": "Doc Reader webhook",
+  "repository": "https://github.com/alexaarris/docreaderapi",
   "logo": "http://xvir.github.io/img/apiai.png",
   "keywords": ["api.ai", "natural language"]
 }
